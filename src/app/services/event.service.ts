@@ -31,4 +31,15 @@ export class EventService {
       return true;
     })));
   }
+
+  addEvent(title: string, description: string, location: string, date: string): Observable<Event> {
+    let eventDto = {
+      title: title,
+      description: description,
+      location: location,
+      date: date,
+    }
+
+    return this.httpClient.post<Event>(`${environment.apiUrl}${this.eventUrl}`, eventDto, this.httpOptions);
+  }
 }

@@ -1,0 +1,39 @@
+<div>
+  <form [formGroup]="form" (submit)="addNew()">
+    <div>
+      <label for="title">Title :</label>
+      <input type="text" id="title" name="title" formControlName="title">
+      <div *ngIf="postForm && form.controls['title'].invalid"
+        class="inline-block text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 max-w-72">
+        <p *ngIf="form.controls['title'].errors?.['required']">The title is required.</p>
+      </div>
+    </div>
+    <div>
+      <label for="description">Description :</label>
+      <input type="text" id="description" name="description" formControlName="description">
+      <div *ngIf="postForm && form.controls['description'].invalid"
+        class="inline-block text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 max-w-72">
+        <p *ngIf="form.controls['description'].errors?.['required']">The description is required.</p>
+      </div>
+    </div>
+    <div>
+      <label for="location">Location :</label>
+      <input type="text" id="location" name="location" formControlName="location">
+      <div *ngIf="postForm && form.controls['location'].invalid"
+        class="inline-block text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 max-w-72">
+        <p *ngIf="form.controls['location'].errors?.['required']">The location is required.</p>
+      </div>
+    </div>
+    <div>
+      <label for="date">Date :</label>
+      <input type="date" id="date" name="date" formControlName="date">
+      <div *ngIf="postForm && form.controls['date'].invalid"
+        class="inline-block text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 max-w-72">
+        <p *ngIf="form.controls['date'].errors?.['required']">The date is required.</p>
+      </div>
+    </div>
+    <div>
+      <button type="submit" title="Add event">Add event</button>
+    </div>
+  </form>
+</div>

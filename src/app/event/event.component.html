@@ -2,6 +2,9 @@
   <div>
     <input type="date" [(ngModel)]="date" (input)="loadEvents()"/>
   </div>
+  <div>
+    <button routerLink="/create-event">New event</button>
+  </div>
   <div *ngFor="let event of events">
     <p>{{event.Title}}</p>
     <p>{{event.Description}}</p>
