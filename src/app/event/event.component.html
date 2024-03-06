@@ -1,0 +1,11 @@
+<div>
+  <div>
+    <input type="date" [(ngModel)]="date" (input)="loadEvents()"/>
+  </div>
+  <div *ngFor="let event of events">
+    <p>{{event.Title}}</p>
+    <p>{{event.Description}}</p>
+    <p>{{event.Date}}</p>
+    <p>{{event.Location}}</p>
+  </div>
+</div>
